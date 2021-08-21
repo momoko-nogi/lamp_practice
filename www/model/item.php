@@ -19,7 +19,7 @@ function get_item($db, $item_id){
       item_id = ?
   ";
   $params[0] = $item_id;
-  return fetch_query($db, $sql, $params = array());
+  return fetch_query($db, $sql, $params);
 }
 
 function get_items($db, $is_open = false){
@@ -89,7 +89,7 @@ function insert_item($db, $name, $price, $stock, $filename, $status){
   $params[2] = $stock;
   $params[3] = $filename;
   $params[4] = $status_value;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function update_item_status($db, $item_id, $status){
@@ -104,7 +104,7 @@ function update_item_status($db, $item_id, $status){
   ";
   $params[0] = $status;
   $params[1] = $item_id;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function update_item_stock($db, $item_id, $stock){
@@ -119,7 +119,7 @@ function update_item_stock($db, $item_id, $stock){
   ";
   $params[0] = $stock;
   $params[1] = $item_id;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function destroy_item($db, $item_id){
@@ -146,7 +146,7 @@ function delete_item($db, $item_id){
     LIMIT 1
   ";
   $params[0] = $item_id;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 

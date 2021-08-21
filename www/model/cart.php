@@ -24,7 +24,7 @@ function get_user_carts($db, $user_id){
       carts.user_id = ? 
   ";
   $params[0] = $user_id;
-  return fetch_all_query($db, $sql, $params = array());
+  return fetch_all_query($db, $sql, $params);
 }
 
 function get_user_cart($db, $user_id, $item_id){
@@ -52,7 +52,7 @@ function get_user_cart($db, $user_id, $item_id){
   ";
   $params[0] = $user_id;
   $params[1] = $item_id;
-  return fetch_query($db, $sql, $params = array());
+  return fetch_query($db, $sql, $params);
 
 }
 
@@ -77,7 +77,7 @@ function insert_cart($db, $user_id, $item_id, $amount = 1){
   $params[0] = $item_id;
   $params[1] = $user_id;
   $params[2] = $amount;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function update_cart_amount($db, $cart_id, $amount){
@@ -92,7 +92,7 @@ function update_cart_amount($db, $cart_id, $amount){
   ";
   $params[0] = $amount;
   $params[1] = $cart_id;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function delete_cart($db, $cart_id){
@@ -104,7 +104,7 @@ function delete_cart($db, $cart_id){
     LIMIT 1
   ";
   $params[0] = $cart_id;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
 function purchase_carts($db, $carts){
@@ -132,7 +132,7 @@ function delete_user_carts($db, $user_id){
       user_id = ?
   ";
   $params[0] = $user_id;
-  execute_query($db, $sql, $params = array());
+  execute_query($db, $sql, $params);
 }
 
 

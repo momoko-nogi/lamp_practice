@@ -16,7 +16,7 @@ function get_user($db, $user_id){
     LIMIT 1
   ";
   $params[0] = $user_id;
-  return fetch_query($db, $sql, $params = array());
+  return fetch_query($db, $sql, $params);
 }
 
 function get_user_by_name($db, $name){
@@ -33,7 +33,7 @@ function get_user_by_name($db, $name){
     LIMIT 1
   ";
   $params[0] = $name;
-  return fetch_query($db, $sql, $params = array());
+  return fetch_query($db, $sql, $params);
 }
 
 function login_as($db, $name, $password){
@@ -108,6 +108,6 @@ function insert_user($db, $name, $password){
   ";
   $params[0] = $name;
   $params[1] = $password;
-  return execute_query($db, $sql, $params = array());
+  return execute_query($db, $sql, $params);
 }
 
